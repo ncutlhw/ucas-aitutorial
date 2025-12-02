@@ -18,10 +18,12 @@
 
 ---
 
+> 对chenyanlin大佬分享的笔记做了本地化的修改。修改了两个启动脚本。以及用知识点生成一些练习题。
+>
 > 有些同学喜欢`clone`到本地观看，补一个**本地部署流程**
-> 
+>
 > **前置要求：** 安装 Python3
-> 
+>
 > **步骤：**
 > 1. clone本仓库 `git clone https://github.com/YanLin-Git/UCAS_AI_2025.git`
 > 2. 进入文件目录
@@ -29,5 +31,5 @@
 >    - **Windows 用户：** 双击运行 `start_docsify.bat` 或在命令行执行 `start_docsify.bat`
 >    - **Linux/Mac 用户：** 执行 `sh start_docsify.sh`
 > 4. 浏览器中输入 `http://localhost:3001/#/`
-> 
+>
 > **注意：** Windows 系统不支持 `sh` 命令，请使用 `.bat` 批处理文件。
