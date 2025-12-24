@@ -2,7 +2,25 @@
 chcp 65001 >nul 2>&1
 REM Windows batch script to start Docsify local server
 REM Function: Start Python HTTP server with no-cache, listening on port 3001
+REM Activate conda base environment
 
+if exist "%USERPROFILE%\Anaconda3\Scripts\activate.bat" (
+    call "%USERPROFILE%\Anaconda3\Scripts\activate.bat" base
+) else if exist "%USERPROFILE%\miniconda3\Scripts\activate.bat" (
+    call "%USERPROFILE%\miniconda3\Scripts\activate.bat" base
+) else if exist "C:\ProgramData\Anaconda3\Scripts\activate.bat" (
+    call "C:\ProgramData\Anaconda3\Scripts\activate.bat" base
+) else if exist "C:\ProgramData\miniconda3\Scripts\activate.bat" (
+    call "C:\ProgramData\miniconda3\Scripts\activate.bat" base
+) else (
+    REM Try to find conda in PATH
+    where conda >nul 2>&1
+    if %errorlevel% == 0 (
+        call conda activate base
+    ) else (
+        echo [警告] 未找到 conda，将使用系统 Python
+    )
+)
 REM Change to the directory where this batch file is located
 cd /d "%~dp0"
 
